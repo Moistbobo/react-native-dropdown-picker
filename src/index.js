@@ -241,7 +241,9 @@ class DropDownPicker extends React.Component {
                 : null
         }
         <View style={[styles.dropDownDisplay]}>
-            {this.state.choice.icon && ! multiple && this.state.choice.icon()}
+            {this.props.customDropdownIcon
+                ? this.state.choice? this.props.customDropdownIcon : null
+            : this.state.choice.icon && ! multiple && this.state.choice.icon()}
             <Text style={[
                 this.props.labelStyle,
             placeholderStyle, {opacity, marginRight: 5},
